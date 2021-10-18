@@ -17,12 +17,17 @@ public class IndexControler {
 		m.addAttribute("tergate", aboutus);
 		return "aboutus/history";
 	}
+	
+	//company history
 	@RequestMapping("/info")
 	public String information(Model m) {
 		aboutus = "Information Panel";
 		m.addAttribute("tergate",aboutus);
 		return "aboutus/history";
 	}
+	
+	
+	//company missin and vision
 	@RequestMapping("/mision")
 	public String mission(Model m) {
 		aboutus = "Mission And Vision";
@@ -46,6 +51,8 @@ public class IndexControler {
 		return"products/Products";
 	}
 	
+	
+	//abot health insurance
 	@RequestMapping("/health")
 	public String Health(Model m) {
 		this.products="Health Insurance";
@@ -53,6 +60,8 @@ public class IndexControler {
 		return"products/Products";
 	}
 	
+	
+	//about Child insurance
 	@RequestMapping("/child")
 	public String Child(Model m) {
 		this.products="Child Insurance";
@@ -60,6 +69,8 @@ public class IndexControler {
 		return"products/Products";
 	}
 	
+	
+	//about Hazz insurance
 	@RequestMapping("/hazz")
 	public String Hazz(Model m) {
 		this.products="Hazz Insurance";
@@ -67,6 +78,8 @@ public class IndexControler {
 		return"products/Products";
 	}
 	
+	
+	//about pention insurance
 	@RequestMapping("/pention")
 	public String Pention(Model m) {
 		this.products="Pention Insurance";
@@ -74,6 +87,8 @@ public class IndexControler {
 		return"products/Products";
 	}
 	
+	
+	//about Education insurance
 	@RequestMapping("/education")
 	public String Education(Model m) {
 		this.products="Education Insurance";
@@ -81,11 +96,19 @@ public class IndexControler {
 		return"products/Products";
 	}
 	
+	
+	//about DenMahar insurance
 	@RequestMapping("/mohar")
 	public String FourPay(Model m) {
 		this.products="Denmahar Insurance";
 		m.addAttribute("product",products);
 		return"products/Products";
+	}
+	
+	@RequestMapping("/calculator")
+	public String Calculator() {
+		
+		return"calculator";
 	}
 	
 

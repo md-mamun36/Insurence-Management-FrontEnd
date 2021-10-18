@@ -1,19 +1,41 @@
 package com.insurence.model;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+
+
 public class CustomerModel {
 	private int custid;
+	
+	@NotBlank(message = "Name is mandatory")
 	private String custname;
+	
+	@NotBlank(message = "Address is mandatory")
 	private String custaddress;
+	
 	private long custnumber;
+	
 	private String custgender;
 	private String policytype;
+	
+	@NotBlank(message = "Password is mandatory")
 	private String custpassword;
+	
+	@NotBlank(message = "Email is mandatory")
 	private String custemail;
 	private int duration;
 	private String prim_method;
 	private int payed_prim;
 	private double account;
+	
+	@NotNull
+	@Max(1000000)
+	private Integer policyAmount;
 	private String position;
+	private String role;
 	private AgentModel agent;
 	
 	
@@ -189,6 +211,30 @@ public class CustomerModel {
 
 	public void setAgent(AgentModel agent) {
 		this.agent = agent;
+	}
+
+
+
+	public String getRole() {
+		return role;
+	}
+
+
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+
+
+	public int getPolicyAmount() {
+		return policyAmount;
+	}
+
+
+
+	public void setPolicyAmount(int policyAmount) {
+		this.policyAmount = policyAmount;
 	}
 
 

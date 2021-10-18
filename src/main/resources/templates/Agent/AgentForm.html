@@ -13,15 +13,15 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|"
 	rel="stylesheet" type="text/css">
-<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
+<link href="/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet"
 	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
 	crossorigin="anonymous" />
 
 <!-- Loading main css file -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body style="background-image: url('https://static1.squarespace.com/static/51e749e8e4b0716d16bd2e12/51e749e8e4b0716d16bd2e16/5ad28ab2575d1f10b3ce2ab0/1523747514506/Insurance+%28for+Savvy+Kiwis%29.jpg');
 	  background-position: center;
@@ -36,6 +36,17 @@
 					<h1 class="text-center " style="padding-top: 10px">
 						<b>Agent Registration <i class="fas fa-user-plus"></i></b>
 					</h1>
+					
+					
+					
+				<!-- form submit massage -->
+					<div class="text-center">
+					<h3 th:if="${valid!=null}" class="text-success"><span th:text="${valid}"></span></h3>
+					<h3 th:if="${invalid!=null}" class="text-danger"><span th:text="${invalid}"></span></h3>
+					</div>
+				<!-- form submit massage -->
+					
+					
 					<div class="form-group col-md-12">
 						<label for="exampleInputname">Agent Name</label> <input
 							type="text" class="form-control" name="agent_name"
@@ -78,17 +89,17 @@
 					<div class="form-group col-md-6 col-sm-12">
 						<label for="bonus">Bonus Percustomer </label> <input
 							type="text" class="form-control" name="tk_percustomer"
-							
+							value="500"
 							id="bonus" 
-							placeholder="Enter percustomer Bonus"> 
+							placeholder="Enter percustomer Bonus" hidden="true"> 
 					</div>
 					
 					<div class="form-group col-md-6 col-sm-12">
 						<label for="quentity">Customer Quentity </label> <input
 							type="text" class="form-control" name="agent_customer"
-							
+							value="0"
 							id="quentity"
-							placeholder="Enter customer Quentity"> 
+							placeholder="Enter customer Quentity" hidden="true"> 
 					</div>
 					
 				<!-- 	<div class="form-group col-md-6 col-sm-12">
@@ -101,7 +112,7 @@
 					<input type="text" value="Active" name="position" hidden="true">
 					<input type="text" value="0" name="primium_bonus" hidden="true">
 					<div class="text-center">
-						<button type="submit" class="btn btn-primary text-center">Create</button>
+						<button type="submit" class="btn btn-primary text-center">Save</button>
 						<a  class="btn btn-danger text-center" href="back">Cancel</a>
 					</div>
 

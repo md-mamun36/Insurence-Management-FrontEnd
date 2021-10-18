@@ -16,7 +16,10 @@ public class ServiceImpl implements DataService{
     private RestTemplate restTemplate;
 	
 	private final String agent_URL="http://localhost:1003/api/agent" ;
+	private final String myagent_URL="http://localhost:1003/api/myagent" ;
+	private final String mycustomer_URL="http://localhost:1003/api/mycustomer" ;
 	private final String cust_URL="http://localhost:1003/api/customer" ;
+	private final String cByAgent="http://localhost:1003/api/customerbyagent" ;
 
 	@Override
 	public AgentModel[] getAllAgent() {
@@ -24,7 +27,7 @@ public class ServiceImpl implements DataService{
 		return allagent;
 	}
 	
-	
+
 
 	@Override
 	public void saveAgent(AgentModel agent) {
@@ -55,7 +58,13 @@ public class ServiceImpl implements DataService{
 		return forObject;
 	}
 
-
+	@Override
+	public AgentModel ByEmail(String email) {
+		String url=myagent_URL+"/{email}";
+		AgentModel forObject = this.restTemplate.getForObject(url, AgentModel.class,email);
+		
+		return forObject;
+	}
 	
 
 	//Customer service
@@ -99,6 +108,32 @@ public class ServiceImpl implements DataService{
 		this.restTemplate.put(url, cust,id);
 		
 	}
+
+
+
+	@Override
+	public CustomerModel[] customerByAgent(int id) {
+		String url=cByAgent+"/{id}";
+	CustomerModel[] customerByagntId = this.restTemplate.getForObject(url, CustomerModel[].class,id);
+		return customerByagntId;
+	}
+
+
+
+	@Override
+	public CustomerModel customerByEmail(String email) {
+		String url=mycustomer_URL+"/{email}";
+		CustomerModel customer = this.restTemplate.getForObject(url, CustomerModel.class,email);
+		return customer;
+	}
+
+
+
+
+
+
+
+	
 
 	
 

@@ -1,18 +1,32 @@
 package com.insurence.model;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 public class AgentModel {
 
 	private int id;
+	
+	@NotBlank(message = "Name is mandatory")
 	private String agent_name;
+	
+	@NotBlank(message = "Address is mandatory")
 	private String agen_address;
+	
+	@Email(regexp = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",message = "Email invalid ")
+	@NotBlank(message = "Email is mandatory")
 	private String agent_email;
+	
+	@NotBlank(message = "password is mandatory")
 	private String agent_password;
+	
 	private long agent_number;
 	private int tk_percustomer;
 	private int  agent_customer;
 //	private double agent_account;
 	private double primium_bonus;
 	private String position;
+	private String role;
 	public AgentModel() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -79,6 +93,13 @@ public class AgentModel {
 	}
 	public void setPrimium_bonus(double primium_bonus) {
 		this.primium_bonus = primium_bonus;
+	}
+
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 	@Override
 	public String toString() {

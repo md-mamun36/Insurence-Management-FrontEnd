@@ -36,7 +36,7 @@
 
 <body>
 
-	<div id="site-content">
+	<div  class="header" id="myHeader">
 		<header class="site-header">
 			<div class="top-header" style="background-color: activecaption;">
 
@@ -63,10 +63,10 @@
 								<a class="dropdown-item" href="adminlogin"
 									onMouseOver="this.style.color='black'"
 									onMouseOut="this.style.color='white'" style="color: white;">Adimn</a>
-								<a class="dropdown-item" href="agentlogForm"
+								<a class="dropdown-item" href="#" th:href="@{/agent/agentlogin}"
 									onMouseOver="this.style.color='black'"
 									onMouseOut="this.style.color='white'" style="color: white;">Agent</a>
-								<a class="dropdown-item" href="userlogForm"
+								<a class="dropdown-item"href="#" th:href="@{/customer/customerlogin}"
 									onMouseOver="this.style.color='black'"
 									onMouseOut="this.style.color='white'" style="color: white;">User</a>
 							</div>
@@ -158,6 +158,8 @@
 							style="color: white">Notice</a></li>
 						<li class="nav-item"><a class="nav-link" href="contact"
 							style="color: white">Cuntact Us</a></li>
+						<li class="nav-item"><a class="nav-link" href="calculator"
+							style="color: white">Primium Calculator</a></li>
 
 					</ul>
 
@@ -169,10 +171,13 @@
 
 
 			<div class="mobile-navigation"></div>
+			</header>
 	</div>
 
-	</header>
+	
 	<!-- .site-header -->
+	
+	
 
 	<div class="row">
 		<div class="card-group">
@@ -314,6 +319,7 @@
 			<div class="map"></div>
 		</div>
 	</main>
+	
 
 	<div class="site-footer">
 
@@ -331,7 +337,24 @@
 			</div>
 		</div>
 	</div>
-	</div>
+	
+	
+	
+	<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
