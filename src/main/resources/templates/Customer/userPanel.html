@@ -223,7 +223,7 @@ li:hover {
 						<tr
 							style="background-color: black; color: yellow; font-size: 16px">
 
-							<th>Name</th>
+						<!-- 	<th>Name</th> -->
 							<th>Address</th>
 							<th>MobileNo.</th>
 							<th>Email</th>
@@ -243,7 +243,7 @@ li:hover {
 					<tbody>
 						<tr th:each="cust :${mycustomer}" th:class="${cust.position}=='running'? bg-white: bg-danger">
 
-							<td th:text="${cust.custname}"></td>
+			<!-- 				<td th:text="${cust.custname}"></td> -->
 							<td th:text="${cust.custaddress}"></td>
 							<td th:text="${cust.custnumber}"></td>
 							<td th:text="${cust.custemail}"></td>

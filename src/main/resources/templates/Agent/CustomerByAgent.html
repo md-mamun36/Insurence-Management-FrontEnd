@@ -159,12 +159,14 @@ text-align: center;
 							<th>Pyed_Prm</th>
 							<th>Account</th>
 							<th>PolcyAmount</th>
-							<th>Position</th>
+							<th >Position</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="cust :${mycustomr}"
-							th:class="${cust.position}=='pending'? bg-danger: bg-white">
+						th:if="${cust.position!='pending'}"
+							
+							th:class="${cust.position}=='disclosed' ? bg-danger: bg-white">
 							<td th:text="${cust.custid}"></td>
 							<td th:text="${cust.custname}"></td>
 							<td th:text="${cust.custaddress}"></td>

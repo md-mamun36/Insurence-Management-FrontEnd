@@ -114,8 +114,8 @@ public class AgentControler {
 	public String customerForm(@PathVariable("id") int id,Model m, Principal princpl) {
 		AgentModel agentById = this.servimple.getAgentModelById(id);
 		if(agentById.getPosition().equals("Active")) {
-//			AgentModel[] allAgent = this.servimple.getAllAgent();
-			
+	//	AgentModel[] allAgent = this.servimple.getAllAgent();
+		
 			m.addAttribute("allagntid", agentById.getId());
 			return "Customer/customerForm";
 			
